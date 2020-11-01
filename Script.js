@@ -15,7 +15,9 @@ $( function() {
     let now = 14;
 
     for(let i=9; i <= 17;i++) {
-        
+        // if (i < 10) {
+        //  i = 0+i  
+        // }
         let classname = "";
         let ClassMiddleName = "";
     
@@ -30,10 +32,10 @@ $( function() {
         else {
             classname = "future";
         }
-        let toDo = localStorage.getItem("0" + i)
+        let toDo = localStorage.getItem(i);
         console.log(toDo);
-        let Element = '<div class="row"><div class="col-sm-2"> '+ moment().set({hour: i}).format('hh A') + '</div> <div class="col-sm-8 '+ classname +'"><input value = "'+toDo+'" time= '+ moment().set({hour: i}).format('hh A') + ' type="text"/></div>';
-        Element += '<div class="col-sm-2"><button time= '+ moment().set({hour: i}).format('hh A') + '>Save</button></div></div><div class="col-sm-2"></div>';
+        let Element = '<div class="row"><div class="col-sm-2"> '+ moment().set({hour: i}).format('h A') + '</div> <div class="col-sm-8 '+ classname +'"><input value = "'+toDo+'" time= '+ moment().set({hour: i}).format('h A') + ' type="text"/></div>';
+        Element += '<div class="col-sm-2"><button time= '+ moment().set({hour: i}).format('h A') + '>Save</button></div></div><div class="col-sm-2"></div>';
         $(".container").append(Element);
 
         
