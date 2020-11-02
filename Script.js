@@ -18,14 +18,6 @@ $( function() {
         
         let classname = "";
         let ClassMiddleName = "";
-
-        let timeField = "";
-        if (i < 12) {
-            timeField = "AM";
-        } else {
-            timeField = "PM";
-        }
-
     
         if (i < now) {
             classname = "past";
@@ -38,12 +30,12 @@ $( function() {
         else {
             classname = "future";
         }
-        
         let toDo = localStorage.getItem(i)
         console.log(toDo);
-        let Element = '<div class="row"><div class="col-sm-2"> '+i+timeField+ '</div> <div class="col-sm-8 '+ classname +'"><input value = "'+toDo+'" time= '+i+timeField+ ' type="text"/></div>';
-        Element += '<div class="col-sm-2"><button time= '+i+timeField+ '>Save</button></div></div><div class="col-sm-2"></div>';
+        let Element = '<div class="row"><div class="col-sm-2"> '+i+ '</div> <div class="col-sm-8 '+ classname +'"><input value = "'+toDo+'" time= '+i+ ' type="text"/></div>';
+        Element += '<div class="col-sm-2"><button time= '+i+ '>Save</button></div></div><div class="col-sm-2"></div>';
         $(".container").append(Element);
+
         
     
     }
