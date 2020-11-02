@@ -15,4 +15,4 @@ Grey - Past
 
 -- Image of webpage :
 
-![Image of Day Planner](Scheduler.png)
+![Image of Day Planner](SchedulerV2.png)

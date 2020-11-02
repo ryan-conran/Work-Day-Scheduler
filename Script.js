@@ -12,7 +12,7 @@
 $( function() {
     const today = moment().format('dddd, MMMM Do');
     $("#currentDay").text(today);
-    let now = 14;
+    let now = moment();
 
     for(let i=9; i <= 17;i++) {
         
@@ -30,10 +30,10 @@ $( function() {
         else {
             classname = "future";
         }
-        let toDo = localStorage.getItem("0" + i)
+        let toDo = localStorage.getItem(i)
         console.log(toDo);
-        let Element = '<div class="row"><div class="col-sm-2"> '+ moment().set({hour: i}).format('hh A') + '</div> <div class="col-sm-8 '+ classname +'"><input value = "'+toDo+'" time= '+ moment().set({hour: i}).format('hh A') + ' type="text"/></div>';
-        Element += '<div class="col-sm-2"><button time= '+ moment().set({hour: i}).format('hh A') + '>Save</button></div></div><div class="col-sm-2"></div>';
+        let Element = '<div class="row"><div class="col-sm-2"> '+i+ '</div> <div class="col-sm-8 '+ classname +'"><input value = "'+toDo+'" time= '+i+ ' type="text"/></div>';
+        Element += '<div class="col-sm-2"><button time= '+i+ '>Save</button></div></div><div class="col-sm-2"></div>';
         $(".container").append(Element);
 
         
